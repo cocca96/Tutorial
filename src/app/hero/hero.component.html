@@ -1,0 +1,24 @@
+
+<div class="container">
+    <mat-card class="col-md-12 col-sm-12 ">
+        <div *ngIf="selectedHero">
+            <h2>{{selectedHero.name|uppercase}} is my hero</h2>
+        </div>
+    </mat-card>
+    <div class="row">
+        <mat-card class="col-md-3  col-sm-6 col-xs-12" style="margin:10px" *ngFor="let h of heroes"
+            [class.selected]="hero === selectedHero" (click)="onSelectedHero(h)">
+            <div class="col-12">
+                <span class="badge" class="col-1">{{h.id}}</span><span class="col-1">{{h.name}}</span>
+            </div>
+            <button class="col-5 " mat-raised-button color="warn" (click)="deleteHero(h)"
+                style="margin-left:20px">Delete</button><span></span>
+            <button class="col-5 " mat-raised-button color="primary" routerLinkActive="active"
+                [routerLink]="['/moreDetails', h.id]">Details</button>
+        </mat-card>
+    </div>
+    <button mat-raised-button color="primary" routerLinkActive="active" [routerLink]="['/addHero']"
+        style="margin:20px">Add
+        hero</button>
+
+</div>

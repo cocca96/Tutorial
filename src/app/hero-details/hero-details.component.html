@@ -1,0 +1,24 @@
+<div class="container">
+   
+   <form [formGroup]="updateForm" (ngSubmit)="modify()" class="col-md-6">
+      <mat-form-field class="form-field" appearance="outline">
+         <mat-label> Name
+         </mat-label>
+         <input [(ngModel)]='hero.name' class="form-control" matInput id="name" type="text" formControlName="name"
+            name="name">
+         <mat-error
+            [hidden]="(updateForm.get('name')?.touched || updateForm.get('name')?.dirty) && !updateForm.get('name')?.valid">
+            enter hero's name</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+         <mat-label> Id
+         </mat-label>
+         <input [(ngModel)]='hero.id' class="form-control" matInput id="id" type="number" formControlName="id"
+            name="id">
+         <mat-error
+            [hidden]="(updateForm.get('id')?.touched || updateForm.get('id')?.dirty) && !updateForm.get('id')?.valid">
+            enter hero's name</mat-error>
+      </mat-form-field>
+      <button mat-raised-button [disabled]="!updateForm.valid" color="primary">Save</button>
+   </form>
+</div>

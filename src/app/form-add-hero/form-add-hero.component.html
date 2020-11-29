@@ -1,0 +1,21 @@
+ <div class="container">
+<mat-card class="col-6 mt-5">
+  <form novalidate (ngSubmit)="save(heroForm)" #heroForm="ngForm">
+    <mat-form-field class="col-md-4">
+      <mat-label>Name</mat-label>
+      <input class="form-control" matInput  [(ngModel)]="hero.name" #heroName="ngModel" name="name" id="name" type="text"
+        required>
+      <mat-error [hidden]="(heroName.touched || heroName.dirty) && !heroName.valid">Please enter hero's name</mat-error>
+
+    </mat-form-field>
+    <mat-form-field class="col-md-4">
+      <mat-label>Id</mat-label>
+      <input class="form-control" style="-moz-appearance: textfield" [(ngModel)]="hero.id" matInput #heroId="ngModel"
+        name="id" id="id" type="number" required>
+      <mat-error [hidden]="(heroId.touched || heroId.dirty) && !heroId.valid">Please enter hero's id</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button [disabled]="!heroForm.valid" color="primary">Save</button>
+  </form>
+</mat-card>
+</div>  

@@ -1,0 +1,37 @@
+<div class="container">
+<div class="card" style="margin-top: 20px">
+  <div class="card-header">
+    Modify hero
+  </div>
+  <div class="card-body">
+    <p>I campi contrassegnati con * sono obbligatori</p>
+    <form novalidate (ngSubmit)="modify()" [formGroup]="heroForm">
+        <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="name">*Name</label>
+        <div class="col-md-8">
+          <input class="form-control" id="name" type="text" formControlName="name" name="nome"
+            [(ngModel)]='hero.name' />
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="id">*id</label>
+        <div class="col-md-8">
+          {{hero.id}}
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3" type="submit" style="width:80px"
+            [title]="heroForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'">
+            Update
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+</div>

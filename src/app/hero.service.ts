@@ -4,7 +4,7 @@ import { Hero } from './hero';
 //import { HEROES } from './mock-heroes'
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Stats } from 'fs';
+// import { Stats } from 'fs';
 import { Statistics } from './statistics';
 
 @Injectable()

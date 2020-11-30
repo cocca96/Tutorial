@@ -92,18 +92,18 @@ export class ChartComponent implements OnInit {
 
   }
 
-  incrementScore() {
-    this.scoreThisYear += 1;
-    this.myChart.data.datasets[0].data[0] = this.scoreThisYear;
-    this.hero.scoreThisYear=this.scoreThisYear;
-    this.heroService.updateHero(this.hero).subscribe();
-    this.myChart.update();
+  // incrementScore() {
+  //   this.scoreThisYear += 1;
+  //   this.myChart.data.datasets[0].data[0] = this.scoreThisYear;
+  //   this.hero.scoreThisYear=this.scoreThisYear;
+  //   this.heroService.updateHero(this.hero).subscribe();
+  //   this.myChart.update();
 
-    // this.router.navigate(['/moreDetails/' + this.hero?.id]);
-    console.log("punteggio" + this.scoreThisYear)
+  //   // this.router.navigate(['/moreDetails/' + this.hero?.id]);
+  //   console.log("punteggio" + this.scoreThisYear)
 
 
-  }
+  // }
   selectOnChange() {
     console.log('chosenValue: '+this.chosenValue);
 

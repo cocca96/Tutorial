@@ -1,27 +1,40 @@
 
 <div class="row">
     <div class="col-6">
+      
         <select [(ngModel)]="chosenValue" (change)="selectOnChange()">
             <option value="1" selected>2010-2011</option>
             <option value="2">2011-2012</option>
             <option value="3">2012-2013</option>
             
         </select>
+        <!-- <mat-form-field>
+            <mat-label>Statistics</mat-label>
+            <mat-select [(ngModel)]="chosenValue" (change)="selectOnChange()">
+                <mat-option value="1">2010-2011</mat-option>
+                <mat-option value="2">2011-2012</mat-option>
+                <mat-option value="3">2012-2013</mat-option>
+                
+            </mat-select>
+        </mat-form-field> -->
         <canvas id="myChart" ></canvas>
 
         
     </div>
     <div class="col-6">
-        <img src="../assets/hero1.png" alt="heroImg" class="col-md-3">
+        
+        <img  [src]="hero.imgUrl" alt="heroImg" class="col-md-4 col-sm-4 col-xs-4 img-fluid">
+        <h3>Description</h3>
+        <p>{{hero.description}}</p>
     </div>
 </div>
 <div>
-<div class="row">
+<!-- <div class="row">
     <mat-label class="col-1 mt-1">Add score</mat-label>
     <button class="col-1 " mat-raised-button color="primary" (click)="incrementScore()">+1</button>
 
 
-</div>
+</div> -->
 <div class="row">
 <button mat-raised-button color="warn" routerLinkActive="active"
 [routerLink]="['/modifyHero', hero?.id]" class="col-3 offset-md-3">Modify</button>

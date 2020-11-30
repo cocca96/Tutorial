@@ -21,9 +21,12 @@ export class HeroComponent implements OnInit {
    hero: Hero = {
     id: 1,
      name: 'Windostorm',
-     scoreLastYear:0,
-     scoreThisYear:0,
-     scoreLast10Years:[]=[]
+     scoreLast10Years:[]=[],
+     description:'', 
+     imgUrl:''
+     
+
+
    }
   constructor(private heroService: HeroService,private router:Router) { }
   ngOnInit(): void {

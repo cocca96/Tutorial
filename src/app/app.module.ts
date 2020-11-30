@@ -17,7 +17,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FormAddHeroComponent } from './form-add-hero/form-add-hero.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatTableModule} from '@angular/material/table';
@@ -25,6 +25,7 @@ import { HeroMoreDetailsComponent } from './hero-more-details/hero-more-details.
 import { ChartComponent } from './chart/chart.component';
 import { HeroDetails1Component } from './hero-details1/hero-details1.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,9 +56,10 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     FormsModule,
     ChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
-  providers: [HeroService],
+  providers: [HeroService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

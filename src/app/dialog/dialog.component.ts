@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -7,32 +8,26 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  name?:string;
-  animal?:string;
-  constructor(public dialog:MatDialog) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  form:FormGroup;
+  id:number;
+  constructor(private fb:FormBuilder,private dialogRef:MatDialogRef<DialogComponent>,@Inject(MAT_DIALOG_DATA) data:any){
+    this.id=data.id;
   }
-onDialog():void{
-  const dialogRef = this.dialog.open(SaveOverviewDialog, {
-    width: '400px',
-    data: {name: this.name, animal: this.animal}
-  });
+  ngOnInit(): void {
+    this.form=this.fb.group({
+      id:[this.id,[]]
+    })
+  }
+  save(){
+    this.dialogRef.close(this.form.value);
+  }
+  close(){
+    this.dialogRef.close();
+  }
+}
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    this.animal = result;
-  });
-}
-}
 
-export class SaveOverviewDialog{
-constructor(public dialogRef: MatDialogRef<SaveDialog>,
-  @Inject(MAT_DIALOG_DATA) public data:SaveDialog){}
-}
-export class SaveDialog{
-animal?:string;
-name?:string;
-}
+
+
 
 

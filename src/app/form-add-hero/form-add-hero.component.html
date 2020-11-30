@@ -1,4 +1,4 @@
- <div class="container">
+ <!-- <div class="container">
 <mat-card class="col-6 mt-5">
   <form novalidate (ngSubmit)="save(heroForm)" #heroForm="ngForm">
     <mat-form-field class="col-md-4">
@@ -18,4 +18,27 @@
     <button mat-raised-button [disabled]="!heroForm.valid" color="primary">Save</button>
   </form>
 </mat-card>
+
+</div>   -->
+ <div class="container">
+<mat-card class="col-6 mt-5">
+  <form novalidate (ngSubmit)="save1()" [formGroup]="heroForm">
+    <mat-form-field class="col-md-4">
+      <mat-label>Name</mat-label>
+      <input class="form-control" matInput  formControlName="name" name="name" id="name" type="text"
+        >
+      <mat-error [hidden]="(heroForm.get('name')?.touched || heroForm.get('name')?.dirty) && !heroForm.get('name')?.valid">Please enter hero's name</mat-error>
+
+    </mat-form-field>
+    <mat-form-field class="col-md-4">
+      <mat-label>Id</mat-label>
+      <input class="form-control" style="-moz-appearance: textfield"  matInput formControlName="id"
+        name="id" id="id" type="number">
+      <mat-error [hidden]="(heroForm.get('id')?.touched || heroForm.get('id')?.dirty) && !heroForm.get('id')?.valid">Please enter hero's id</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button [disabled]="!heroForm.valid" color="primary">Save</button>
+  </form>
+</mat-card>
+
 </div>  

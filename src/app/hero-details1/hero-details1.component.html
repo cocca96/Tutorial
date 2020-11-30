@@ -13,14 +13,40 @@
             [(ngModel)]='hero.name' />
         </div>
       </div>
-
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label" for="id">*id</label>
         <div class="col-md-8">
           {{hero.id}}
         </div>
       </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-4">
+          <button class="btn btn-outline-primary"
+                  type="button"
+                  (click)="addDetails()">
+            Add Details
+          </button>
+        </div>
+        <div class="row" *ngIf="details1">
+          <label class="col-md-4 col-form-label" for="description">Description</label>
+        <div class="col-md-8">
+          <input class="form-control" id="description" type="text" formControlName="description" name="description"
+            [(ngModel)]='hero.description' />
+        </div>
+        <label class="col-md-4 col-form-label" for="description">Choose hero's image</label>
+        <!-- <div class="col-md-8">
+          <input class="form-control" id="imgUrl" type="text" formControlName="imgUrl" name="imgUrl"
+            [(ngModel)]='hero.imgUrl' />
+        </div> -->
+        <select [(ngModel)]="chosenValue" (change)="selectOnChange()">
+          <option value="1" >Img1</option>
+          <option value="2">Img2</option>
+          <option value="3">Img3</option>
+          
+      </select>
 
+        </div>
+      </div>
       <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
           <button class="btn btn-primary mr-3" type="submit" style="width:80px"
@@ -29,8 +55,11 @@
           </button>
         </div>
       </div>
+     
+    
 
     </form>
+   
   </div>
 
 </div>

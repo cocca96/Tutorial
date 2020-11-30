@@ -1,1 +1,12 @@
-<p>dialog works!</p>
+<h2 mat-dialog-title>Sorry, this id is not avaible</h2>
+<mat-dialog-content [formGroup]="form">
+    <!-- <mat-form-field>
+        <input matInput placeholder="id" 
+        formControlName="id">
+    </mat-form-field> -->
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <!-- <button class="mat-raised-button" (click)="save()">Save</button> -->
+
+</mat-dialog-actions>
